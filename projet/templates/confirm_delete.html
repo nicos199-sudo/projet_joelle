@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}delete{% endblock title %}
+{% block content %}
+
+<main class="mt-5 pt-4">
+  <div class="container">
+    <section class=" mb-4 col-6 col-md-6 offset-3" style="box-shadow: 1px 5px 14px 0px gray; border-radius: 5px;margin-top: 67px;">
+
+	<form method="post">
+		{% csrf_token %}
+    <p style="margin-left: 46px;font-size: medium; font-weight: 600;" class="text-center">Are you sure you want to delete "{{ object }}"?</p>
+
+
+     <button type="submit" class="btn btn-success text-center" style=" margin-left: 206px;margin-top: 41px;box-shadow: 2px 3px black;">
+       	<i class="fa fa-check-square-o" aria-hidden="true">yes</i>
+       </button>
+</form>
+
+</section>
+  </div>
+</main>
+                
+{% endblock content %}

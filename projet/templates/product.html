@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Product{% endblock title %}
+
+{% block content %}
+
+<main class="mt-5 pt-4">
+  <div class="container dark-grey-text mt-5" style="margin-right: 1843px;">
+    <div class="row wow fadeIn">
+      <div class="col-md-6 mb-4">
+        
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="p-4">
+          <div class="mb-3">
+            <a href="">
+              <span class="badge purple mr-1">{{object.get_category_display}}</span>
+            </a>
+          <h4 class="mt-3"><strong>{{object.title}}</strong></h4>
+          <p class="lead">
+            <span class="mr-1">
+              {% if object.discount_price %}
+                <del>BIF{{object.price}}</del>
+                <span>BIF{{object.discount_price}}</span>
+              {% else %}
+                <span>BIF{{object.price}}</span>
+              {% endif %}
+            </span>
+          </p>
+          </div>
+          
+          
+
+            <a href="{{object.get_add_to_cart_url}}" class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+            <i class="fas fa-shopping-cart ml-1"></i>
+          </a>
+          <a href="{{object.get_remove_from_cart_url}}" class="btn btn-danger btn-md my-0 p" type="submit">Remove from cart
+            <i class="fas fa-shopping-cart ml-1"></i>
+          </a>
+
+        </div>
+      </div>
+    </div>
+    <hr>
+   
+   
+  </div>
+</main>
+
+{% endblock content %}
+  
+ 

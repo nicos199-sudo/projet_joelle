@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Customers{% endblock title %}
+{% block content %}
+
+<style>
+  .small-img{
+    width: 70px;
+    height: 70px;
+  }
+</style>
+<main class="mt-5 pt-4">
+  <div class="container"  style="margin-top: 37px;">
+    <section class="mb-4">
+    
+
+      <h1 class="text-center">user</h1>
+      <div class="table-responsive text-nowrap">
+        
+        <table class="table">
+          <thead class="bg-danger red lighten-3 text-white">
+            <tr>
+              
+              <th scope="col">Username</th>
+              
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+           <tbody>
+                                    {% for user in object_list %}
+                                        <tr class="gradeX">
+                                            <td>{{ user.username }}</td>
+                                           
+
+                                            <td>{{ user.email }}</td>
+
+
+                                            <td>
+                                               
+                                               <a href="{% url 'customer_delete' user.id %}">
+                                <span style="color: red;" class="float-right">
+                                    <i class="fas fa-trash-alt"></i>
+                                </span>
+                                              </a>
+                                        
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+        </table>
+        
+
+      </div>
+    </section>
+  </div>
+</main>
+
+{% endblock content %}

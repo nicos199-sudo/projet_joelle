@@ -1,0 +1,64 @@
+
+{% extends "base.html" %} 
+{% block title %}donor list{% endblock title %}
+{% block content %}
+<style>
+  .small-img{
+    width: 70px;
+    height: 70px;
+  }
+</style>
+<main class="mt-5 pt-4">
+  <div class="container"  style="margin-top: 37px;">
+    <section class="mb-4">
+    
+
+      <h1 class="text-center">Donor</h1>
+      <div class="table-responsive text-nowrap">
+        
+        <table class="table">
+          <thead class="bg-danger red lighten-3 text-white">
+            <tr>
+              
+              <th scope="col">Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">Blood type</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Address</th>
+            </tr>
+          </thead>
+           <tbody>
+                                    {% for donor in object_list %}
+                                        <tr class="gradeX">
+                                            <td>{{ donor.name }}</td>
+                                            <td>{{ donor.age }}</td>
+                                            <td>{{ donor.blood_group }}</td>
+                                            <td>{{ donor.phone }}</td>
+
+                                            <td>{{ donor.address }}</td>
+
+
+                                            <td>
+                                                <a href="{% url 'donor_update' donor.id %}">
+                              <span style="color: green;" class="float-right" >
+                                    <i class="fas fa-edit" style="margin-left: 50px;"></i>
+                             </span>
+                                             </a>
+                                               <a href="{% url 'donor_delete' donor.id %}">
+                                <span style="color: red;" class="float-right">
+                                    <i class="fas fa-trash-alt"></i>
+                                </span>
+                                              </a>
+                                        
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+        </table>
+        
+
+      </div>
+    </section>
+  </div>
+</main>
+{% endblock content %}
