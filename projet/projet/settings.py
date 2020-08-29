@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url
 
 django_heroku.settings(locals())
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -27,7 +28,7 @@ SECRET_KEY = '6!jds3@!t5yku9*wxk70qk7cidj2jk^7phs5mqh!&9v1gmnrs6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['ubuzima.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['joebloodbank.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
